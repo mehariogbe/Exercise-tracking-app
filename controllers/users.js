@@ -27,5 +27,5 @@ function newUser(req, res) {
 
 
 module.exports = {
-    userIndex, create,
+    userIndex, create, newUser,
 }
