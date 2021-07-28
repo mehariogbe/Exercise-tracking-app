@@ -20,12 +20,15 @@ function create (req, res) {
     })
 }
 
-function newUser(req, res) {
+function updateUser(req, res) {
     
 }
 
+function deleteUser(req, res) {
+
+}
 
 
 module.exports = {
-    userIndex, create, newUser,
+    userIndex, updateUser, deleteUser,
 }
