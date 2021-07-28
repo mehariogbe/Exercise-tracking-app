@@ -7,7 +7,7 @@ const usersCtrl = require("../controllers/users");
 
 router.get('/', usersCtrl.userIndex);
 router.delete('/:id', usersCtrl.deleteUser);
-router.update('/:id', usersCtrl.updateUser);
+router.put('/:id', usersCtrl.updateUser);
 
 
 
