@@ -9,6 +9,22 @@
 </head>
 <body>
     <h1>Exercise Tracking App</h1>
+
+    <ul >
+       
+        <!-- new html below -->
+        <li>
+          <% if (user) { %>
+          <a href="/logout">
+            <i >trending_flat</i>Log Out</a>
+          
+          <% } else { %>
+          <a href="/auth/google">
+           <i>vpn_key</i>Login with Google</a
+          >
+          <% } %>
+        </li>
+      </ul>
     
 </body>
 </html>

@@ -15,7 +15,7 @@ passport.use(
         // a user has logged in with OAuth...
         User.findOne({googleId: profile.id}, function (err, user) {
             if (err) return cb(err);
-            if (student) {
+            if (user) {
                 return cb(null, user);
             } else {
                 //We have a new User via OAuth
@@ -39,7 +39,7 @@ passport.use(
   });
 
   passport.deserializeUser(function (id, done) {
-    Student.findById(id, function (err, user) {
+    User.findById(id, function (err, user) {
       done(err, user);
     });
   });
