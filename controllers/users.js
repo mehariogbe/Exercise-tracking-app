@@ -18,6 +18,10 @@ function updateUser(req, res) {
 }
 
 function deleteUser(req, res) {
+    User.findByIdAndDelete(req.params.id, function (err, user) {
+        if (err) return res.redirect('/users');
+        res.redirect('/users');
+    });
 
 }
 

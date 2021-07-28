@@ -1,0 +1,29 @@
+<%- include('../partials/header') %>
+
+    <table>
+        <thead>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Birth Date</th>
+           
+
+        </thead>
+        <tbady>
+            <% users.forEach(function(user) { %>
+                <tr>
+                    <td><%= user.name %></td>
+                    <td><%= user.email %></td>
+                    <td><%= user.birthday %></td>
+                    <td><a href="/users/<%= user._id %>">DETAILS</a></td>
+                    <td>
+                        <form action="/users/<%= user._id %>?_method=DELETE" method="POST" class="delete">
+                        <button type="submit">Delete</button>
+                    </form>
+                    </td>
+                </tr>
+
+           <% }) %>
+        </tbady>
+    </table>
+    
+<%- include('../partials/footer') %>
