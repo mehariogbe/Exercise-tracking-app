@@ -6,7 +6,9 @@ function userIndex(req, res) {
             return res.send('error =(');
         }
         res.render('users/index', {
-            users
+            title: 'All Users',
+            users,
+            user: req.user
         });
     });
 }

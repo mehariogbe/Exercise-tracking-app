@@ -20,9 +20,8 @@ require("./config/database");
 require("./config/passport");
 
 
-//Routes Section
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
+
+
 
 
 
@@ -44,7 +43,9 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-
+//Routes Section
+app.use('/', indexRouter);
+app.use('/users', usersRouter);
 
 
 app.listen(PORT, function() {
