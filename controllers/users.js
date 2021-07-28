@@ -14,7 +14,17 @@ function userIndex(req, res) {
 
 
 function updateUser(req, res) {
-    
+    const id = req.params.id;
+    const name = req.params.name;
+    const email = req.params.email;
+    const birthday = req.params.birthday;
+   User.findByIdAndUpdate(id, {name: name}, {email: email}, {birthday: birthday}, function(err, res) {
+       if(err) {
+           res.send(err);
+       } else {
+           res.redirect('/users');
+       }
+   }) 
 }
 
 function deleteUser(req, res) {
