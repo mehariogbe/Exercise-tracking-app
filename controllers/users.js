@@ -11,14 +11,7 @@ function userIndex(req, res) {
     });
 }
 
-function create (req, res) {
-    const user = new User(req.body);
-    user.save(function (err) {
-        if (err)
-        return res.send(err);
-        return res.redirect('/users');
-    })
-}
+
 
 function updateUser(req, res) {
     
