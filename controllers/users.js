@@ -1,4 +1,5 @@
 const User = require('../models/user');
+const Exercise = require('../models/exercise');
 
 function userIndex(req, res) {
     User.find({}, function (err, users) {
@@ -37,7 +38,23 @@ function deleteUser(req, res) {
 
 }
 
+function show(req, res){
+    User.findById(req.params.id, function(err, user){
+        Exercise.find({user: user._id}, function(err, exercises){
+        res.render('users/show', {
+            exercises,
+            title: 'User Detail',
+            user
+        });
+    }) 
+});
+ 
+}
+
 
 module.exports = {
-    userIndex, updateUser, deleteUser,
+    userIndex,
+    updateUser,
+    deleteUser,
+    show,
 }
