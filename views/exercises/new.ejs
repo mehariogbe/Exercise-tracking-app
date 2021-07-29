@@ -1,0 +1,24 @@
+<%- include('../partials/header') %>
+
+
+
+
+<form action="/exercises/<%= userId %>/" method="POST">
+    <label>Type Of Exercise:
+        <input type="text" name="typeOfExercise" >
+    </label><br>
+    <label>Date:
+        <input type="date" name="date">
+
+    </label><br>
+    <label>Sets:
+        <input type="text" name="sets" >
+    </label><br>
+    <label>Reps:
+        <input type="text" name="reps" >
+    </label><br>
+    <input type="submit" value="Add Exercise">    
+   
+
+</form>
+<%- include('../partials/footer') %>

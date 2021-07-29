@@ -7,14 +7,45 @@
   <li>
     <% if (users) { %>
     <a href="/logout">
-      <i >trending_flat</i>Log Out</a>
+      <i ></i>Log Out</a>
     
     <% } else { %>
     <a href="/auth/google">
-     <i>vpn_key</i>Login with Google</a
+     <i></i>Login with Google</a
     >
     <% } %>
   </li>
 </ul>
+
+<table>
+  <thead>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Birth Date</th>
+     
+
+  </thead>
+  <tbady>
+      <% users.forEach(function(user) { %>
+          <tr>
+              <td><%= user.name %></td>
+              <td><%= user.email %></td>
+              <td><%= user.birthday %></td>
+              <td><a href="/users/<%= user._id %>">DETAILS</a></td>
+              <td>
+                  <form action="/users/<%= user._id %>?_method=DELETE" method="POST" class="delete">
+                  <button type="submit">Delete</button>
+              </form>
+              </td>
+              <td>
+                <form action="/users/<%= user._id %>?_method=UPDATE" method="POST" class="update">
+                <button type="submit">Update</button>
+            </form>
+            </td>
+          </tr>
+
+     <% }) %>
+  </tbady>
+</table>
     
 <%- include('../partials/footer') %>
