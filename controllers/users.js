@@ -16,18 +16,39 @@ function userIndex(req, res) {
 
 
 
-function updateUser(req, res) {
-    const id = req.params.id;
-    const name = req.params.name;
-    const email = req.params.email;
-    const birthday = req.params.birthday;
-   User.findByIdAndUpdate(id, {name: name}, {email: email}, {birthday: birthday}, function(err, res) {
-       if(err) {
-           res.send(err);
-       } else {
-           res.redirect('/users');
-       }
-   }) 
+// function updateUser(req, res) {
+//     const id = req.params.id;
+//     const name = req.params.name;
+//     const email = req.params.email;
+//     const birthday = req.params.birthday;
+//    User.findByIdAndUpdate(id, {name: name}, {email: email}, {birthday: birthday}, function(err, res) {
+//        if(err) {
+//            res.send(err);
+//        } else {
+//            res.redirect('/users/update');
+//        }
+//    }) 
+// }
+ 
+function updateUser(req, res, next)  {
+    let userId = req.params.id,
+    userParams = {
+        name: req.body.name,
+        email: req.body.email,
+        birthday: req.body.birthday,
+    };
+    User.findByIdAndUpdate(userId, {
+        $set: userParams
+    })
+    .then(user => {
+        res.locals.redirect = `/users/${userId}`;
+        res.locals.user = user;
+        next();
+    })
+    .catch(error => {
+        console.log(`Error:${error.message}`);
+        next(error);
+    });
 }
 
 function deleteUser(req, res) {
