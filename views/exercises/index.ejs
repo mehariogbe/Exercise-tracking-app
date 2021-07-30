@@ -1,5 +1,5 @@
 <%- include('../partials/header') %>
-
+<h1>exercises</h1>
 <ul >
        
     <!-- new html below -->
@@ -15,5 +15,48 @@
       <% } %>
     </li>
   </ul>
+
+  <section>
+    <div>Name: </div>
+    <div><%= user.name %></div>
+   
+</section>
+
+  <section>
+    <h2>Exercises</h2>
+    </form>
+    <% if (exercises.length) { %>
+      <table>
+        <thead>
+          <tr>
+            
+            <th>Exercsie</th>
+            <th>Date</th>
+            <th>Sets</th>
+            <th>Reps</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% exercises.forEach(function(e) { %>
+          <tr>
+           
+            <td><%= e.typeOfExercise %></td>
+            <td><%= e.date %></td>
+            <td><%= e.sets %></td>
+            <td><%= e.reps %></td>
+            
+          </tr>
+          <% }); %>
+          
+        </tbody>
+      </table>
+      <% } else { %>
+      <h5>No Exercises Yet</h5>
+      <% } %>
+    </section>
+     
+    
+
+
 
   <%- include('../partials/footer') %>

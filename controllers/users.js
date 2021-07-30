@@ -18,9 +18,9 @@ function userIndex(req, res) {
 
 // function updateUser(req, res) {
 //     const id = req.params.id;
-//     const name = req.params.name;
-//     const email = req.params.email;
-//     const birthday = req.params.birthday;
+//     const name = req.body.name;
+//     const email = req.body.email;
+//     const birthday = req.body.birthday;
 //    User.findByIdAndUpdate(id, {name: name}, {email: email}, {birthday: birthday}, function(err, res) {
 //        if(err) {
 //            res.send(err);
@@ -29,8 +29,24 @@ function userIndex(req, res) {
 //        }
 //    }) 
 // }
- 
+function updateIndex(req,res) {
+    let userId = req.params.id;
+    User.findById(userId)
+        .then(user => {
+          res.render("users/update", {
+            user: user,
+            title: 'User update'
+          });
+        })
+        .catch(error => {
+          console.log(`Error fetching user by ID: ${error.message}`);
+          next(error);
+        });
+
+} 
+
 function updateUser(req, res, next)  {
+    console.log(req.params.id);
     let userId = req.params.id,
     userParams = {
         name: req.body.name,
@@ -41,8 +57,9 @@ function updateUser(req, res, next)  {
         $set: userParams
     })
     .then(user => {
-        res.locals.redirect = `/users/${userId}`;
-        res.locals.user = user;
+        console.log(user)
+        res.redirect(`/users/${userId}`);
+        // res.user = user;
         next();
     })
     .catch(error => {
@@ -78,4 +95,5 @@ module.exports = {
     updateUser,
     deleteUser,
     show,
+    updateIndex,
 }

@@ -6,9 +6,11 @@ const usersCtrl = require("../controllers/users");
 
 
 router.get('/', usersCtrl.userIndex);
+router.put('/:id', usersCtrl.updateUser);
 router.delete('/:id', usersCtrl.deleteUser);
-router.put('/users/:id', usersCtrl.updateUser);
+
 router.get("/:id", usersCtrl.show); 
+router.get("/:id/update",usersCtrl.updateIndex);
 
 
 
