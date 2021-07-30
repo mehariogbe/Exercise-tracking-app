@@ -27,4 +27,35 @@
 <a href="/users/<%= user._id %>/exercises/new">Add New Exercise</a>
 <a href="/users/<%= user._id %>/exercises/index"> Exercise</a>
 <a href="/users/<%= user._id %>/notes"> Add Notes</a>
+
+<section>
+  <h2>notes</h2>
+  <% if (user.notes.length) { %>
+    <table>
+      <thead>
+        <tr>
+          
+          <th>Notes</th>
+          <th>Date</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+        <% user.notes.forEach(function(n) { %>
+        <tr>
+         
+          <td><%= n.notes %></td>
+          <td><%= n.createdAt.toLocaleDateString() %></td>
+          
+          
+        </tr>
+        <% }); %>
+        
+      </tbody>
+    </table>
+    <% } else { %>
+    <h5>No Notes Yet</h5>
+    <% } %>
+</section>
+
 <%- include('../partials/footer') %> 
