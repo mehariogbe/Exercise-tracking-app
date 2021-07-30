@@ -10,6 +10,7 @@ const methodOverride = require("method-override");
 const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
 const exercisesRouter = require("./routes/exercises");
+const notesRouter = require("./routes/notes");
 
 require("dotenv").config();
 
@@ -48,6 +49,7 @@ app.use(passport.session());
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/',exercisesRouter);
+app.use('/', notesRouter);
 
 
 app.listen(PORT, function() {
