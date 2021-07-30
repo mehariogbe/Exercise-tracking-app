@@ -33,8 +33,8 @@ function noteIndex(req, res) {
         
       user.notes.push(req.body);
       user.save(function (err) {
-        
-        res.redirect(`/user/${user._id}`);
+        console.log(user)
+        res.redirect(`/users/${user._id}`);
       });
     });
   }
