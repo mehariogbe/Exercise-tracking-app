@@ -28,16 +28,20 @@ function noteIndex(req, res) {
 
 
   function create(req, res) {
-      console.log(req.user);
+      // console.log(req.user);
  User.findById(req.params.id, function (err, user) {
-        if(err) console.log(err)
+        
       user.notes.push(req.body);
       user.save(function (err) {
-        if(err) console.log(err)
+        
         res.redirect(`/user/${user._id}`);
       });
     });
   }
+
+
+
+
 
   module.exports = {
     noteIndex,
