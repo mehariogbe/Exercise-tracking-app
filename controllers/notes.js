@@ -14,13 +14,18 @@ function noteIndex(req, res) {
     //     res.redirect(`/user/${user._id}`);
     //   });
     // });
-    res.render('exercises/notes',
+    User.findById(req.params.id, function(err, user) {
+       res.render('users/notes',
     {
         title: 'All Users',
-        user: req.user,
+        user: user._id,
         userId: req.params.id
     })
+    })
+
+   
   }
+
 
   function create(req, res) {
       console.log(req.user);
@@ -34,4 +39,7 @@ function noteIndex(req, res) {
     });
   }
 
-  module.exports = {noteIndex, create}
+  module.exports = {
+    noteIndex,
+     create,
+    }
