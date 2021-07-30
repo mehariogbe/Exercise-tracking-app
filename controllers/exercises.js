@@ -36,8 +36,9 @@ function create(req, res) {
     let date = req.body.date;
     let sets = req.body.sets;
     let reps = req.body.reps;
+    let weight = req.body.weight;
     let user = req.params.id;
-    let exercise = new Exercise({ typeOfExercise, date, sets, reps, user });
+    let exercise = new Exercise({ typeOfExercise, date, sets, reps, weight, user });
     Exercise.create(req.body, function (err, exercise) {
         res.redirect(`/users/${userId}/exercises/index`);
     });
