@@ -13,6 +13,8 @@ const exerciseSchema = new Schema({
     date: {type: Date},
     sets: {type: Number},
     reps: {type: Number},
+
+    user: {type: Schema.Types.ObjectId, ref: 'User'} ,  
     notes: [noteSchema]
 },{
     timestamps: true

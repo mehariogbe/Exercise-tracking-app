@@ -38,10 +38,11 @@
               </form>
               </td>
               <td>
-                <form action="/users/<%= user._id %>?_method=UPDATE" method="POST" class="update">
+                <form action="/users/<%= user._id %>/update" method="GET" class="update">
                 <button type="submit">Update</button>
             </form>
             </td>
+            
           </tr>
 
      <% }) %>
