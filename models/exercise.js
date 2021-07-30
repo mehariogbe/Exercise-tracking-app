@@ -1,12 +1,12 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const noteSchema = new Schema({
-    notes: {type: String},
-    date: {type: Date},
-},{
-    timestamps: true
-})
+// const noteSchema = new Schema({
+//     notes: {type: String},
+//     date: {type: Date},
+// },{
+//     timestamps: true
+// })
 
 const exerciseSchema = new Schema({
     typeOfExercise: {type: String},
@@ -16,7 +16,7 @@ const exerciseSchema = new Schema({
     weight: {type: Number},
 
     user: {type: Schema.Types.ObjectId, ref: 'User'} ,  
-    notes: [noteSchema]
+    // notes: [noteSchema]
 },{
     timestamps: true
 })

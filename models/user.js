@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const noteSchema = new Schema({
-    notes: {type: String},
+    content: {type: String},
     date: {type: Date},
 },{
     timestamps: true
