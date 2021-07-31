@@ -15,6 +15,7 @@ function newExercise(req, res) {
         userId: req.params.id,
         
         title: 'New Exercise',
+        user: req.user
     });
     // console.log(userId)
 }

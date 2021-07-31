@@ -1,0 +1,14 @@
+body {
+    display: grid;
+    /* font-family: 'Asap', sans-serif;
+    background-color: rgb(180, 255, 255); */
+    text-align: center;
+    justify-content: center;
+}
+td { 
+    border-bottom: 1px ;
+    padding: 8px;
+}
+ul li {
+    list-style-type: none;
+}
