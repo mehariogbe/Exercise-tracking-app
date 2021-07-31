@@ -4,27 +4,28 @@
 
 
 
-
-<form action="/exercises/<%= userId %>/" method="POST">
-    <label>Type Of Exercise:
+<div class="padding">
+    <form action="/exercises/<%= userId %>/" method="POST" class="spacing">
+    <label class="spacing">Type Of Exercise:
         <input type="text" name="typeOfExercise" >
     </label><br>
-    <label>Date:
+    <label class="spacing">Date:
         <input type="date" name="date">
 
     </label><br>
-    <label>Sets:
+    <label class="spacing">Sets:
         <input type="text" name="sets" >
     </label><br>
-    <label>Reps:
+    <label class="spacing">Reps:
         <input type="text" name="reps" >
     </label><br>
-    <label>Weights:
+    <label class="spacing">Weights:
         <input type="text" name="weight" >
     </label><br>
     <input type="submit" value="Add Exercise">    
    
 
-</form>
+    </form>
+</div>
 <img src="/image/workOut.jpeg" alt="">
 <%- include('../partials/footer') %>

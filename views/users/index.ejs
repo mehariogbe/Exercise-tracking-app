@@ -2,7 +2,7 @@
 
 
 
-
+<div class="padding">
 <table>
   <thead>
       <th>Name</th>
@@ -14,9 +14,9 @@
   <tbady>
       <% users.forEach(function(user) { %>
           <tr>
-              <td><%= user.name %></td>
-              <td><%= user.email %></td>
-              <td><%= user.birthday %></td>
+              <td class="spacing"><%= user.name %></td>
+              <td class="spacing"><%= user.email %></td>
+              <td class="spacing"><%= user.birthday %></td>
               <td><a href="/users/<%= user._id %>">DETAILS</a></td>
               <td>
                   <form action="/users/<%= user._id %>?_method=DELETE" method="POST" class="delete" >
@@ -34,5 +34,6 @@
      <% }) %>
   </tbady>
 </table>
+</div>
     
 <%- include('../partials/footer') %>

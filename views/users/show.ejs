@@ -1,23 +1,24 @@
 <%- include('../partials/header') %>
 
-
+<section id="aTags">
+<a href="/users/<%= user._id %>/exercises/new">Add New Exercise</a>
+<a href="/users/<%= user._id %>/exercises/index"> Exercise Page</a>
+<a href="/users/<%= user._id %>/notes"> Add Notes</a>
+</section>
 
 <section>
-    <div>Name: </div>
+    <div class="userInfo">Name: </div>
     <div><%= user.name %></div>
-    <div>Email: </div>
+    <div class="userInfo">Email: </div>
     <div><%= user.email %></div>
-    <div>Birth Date: </div>
+    <div class="userInfo">Birth Date: </div>
     <div><%= user.birthday %></div>
 </section>
-<a href="/users/<%= user._id %>/exercises/new">Add New Exercise</a>
-<a href="/users/<%= user._id %>/exercises/index"> Exercise</a>
-<a href="/users/<%= user._id %>/notes"> Add Notes</a>
 
 
 <section>
   
-  <h2>notes</h2>
+  <h2>Notes</h2>
   <% if (user.notes.length) { %>
     <table>
       <thead>
