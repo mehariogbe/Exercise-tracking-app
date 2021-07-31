@@ -1,5 +1,11 @@
 Exercise Tracking App allows the user to track your daily workout routines easily. This app allows the user to input the type of workout the user did, how many sets and reps along with the weight you were lifting for that particular exercise. Also we have added a notes section for the user in case they want to write how they felt about their workout for that particular day as well.
 
+As a user you should be able to do the following things:
+    -log in to Google Oauth
+    -edit your profile:(name, email, birthday)
+    -add new exercises to your profile (with name of exercise, sets, reps and weights).
+    -add notes to your profile.
+
 Some of the technology that we used for this app to work was
     -Express
     -node.js
