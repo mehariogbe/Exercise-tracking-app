@@ -8,4 +8,5 @@ router.get('/users/:id/exercises/index', exerciseCtrl.show);
 router.post('/exercises/:id', exerciseCtrl.create);
 
 
+
 module.exports = router;

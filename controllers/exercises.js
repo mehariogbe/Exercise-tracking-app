@@ -1,3 +1,4 @@
+const exercise = require('../models/exercise');
 const Exercise = require('../models/exercise');
 const User = require('../models/user');
 
@@ -5,6 +6,7 @@ module.exports = {
     new: newExercise,
     show,
     create,
+    
   
 }
 
@@ -43,3 +45,4 @@ function create(req, res) {
         res.redirect(`/users/${userId}/exercises/index`);
     });
 }
+
