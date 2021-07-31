@@ -24,7 +24,7 @@ function show(req, res){
         Exercise.find({user: user._id}, function(err, exercises){
         res.render('exercises/index', {
             exercises,
-            title: 'Exercsie page',
+            title: 'Exercise Page',
             user
         });
     }) 
