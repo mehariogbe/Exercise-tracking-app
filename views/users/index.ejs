@@ -33,13 +33,13 @@
               <td><%= user.birthday %></td>
               <td><a href="/users/<%= user._id %>">DETAILS</a></td>
               <td>
-                  <form action="/users/<%= user._id %>?_method=DELETE" method="POST" class="delete">
+                  <form action="/users/<%= user._id %>?_method=DELETE" method="POST" class="delete" >
                   <button type="submit">Delete</button>
               </form>
               </td>
               <td>
                 <form action="/users/<%= user._id %>/update" method="GET" class="update">
-                <button type="submit">Update</button>
+                <button type="submit">Edit</button>
             </form>
             </td>
             

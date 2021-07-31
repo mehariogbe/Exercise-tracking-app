@@ -46,7 +46,7 @@ function updateIndex(req,res) {
 } 
 
 function updateUser(req, res, next)  {
-    console.log(req.params.id);
+    // console.log(req.params.id);
     let userId = req.params.id,
     userParams = {
         name: req.body.name,
@@ -57,8 +57,8 @@ function updateUser(req, res, next)  {
         $set: userParams
     })
     .then(user => {
-        console.log(user)
-        res.redirect(`/users/${userId}`);
+        // console.log(user)
+        res.redirect(`/users/`);
         // res.user = user;
         next();
     })

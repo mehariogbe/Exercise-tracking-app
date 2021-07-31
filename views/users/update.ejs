@@ -1,8 +1,7 @@
 <%- include('../partials/header') %>
 
 <div class="data-form" >
-    <form method="POST" action="<%=`/users/${user._id}
-   ?_method=PUT`%>">
+    <form action="<%=`/users/${user._id}?_method=PUT`%>" method="POST" >
       <h2>Edit user:</h2>
       <label for="Name">Name</label>
       <input type="text" name="name"  value="<%=

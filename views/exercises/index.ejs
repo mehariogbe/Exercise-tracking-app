@@ -47,6 +47,7 @@
             <td><%= e.reps %></td>
             <td><%= e.weight %></td>
             
+            
           </tr>
           <% }); %>
           
@@ -57,6 +58,8 @@
       <% } %>
 
       <td><a href="/users/<%= user._id %>">Users Page</a></td>
+      
+      <a href="/users/<%= user._id %>/exercises/new">Add New Exercise</a>
     </section>
      
     
