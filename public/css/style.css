@@ -12,3 +12,7 @@ td {
 ul li {
     list-style-type: none;
 }
+img {
+    padding: 50px;
+    text-align: center;
+}
