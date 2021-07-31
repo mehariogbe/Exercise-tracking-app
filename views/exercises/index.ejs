@@ -1,6 +1,10 @@
 <%- include('../partials/header') %>
 
+<section class="aTags">
+<td><a href="/users/<%= user._id %>">Users Page</a></td>
 
+<a href="/users/<%= user._id %>/exercises/new">Add New Exercise</a>
+</section>
 
   <section>
     <div> </div>
@@ -16,11 +20,11 @@
         <thead>
           <tr>
             
-            <th>Exercsie</th>
-            <th>Date</th>
-            <th>Sets</th>
-            <th>Reps</th>
-            <th>Weights</th>
+            <th class="exerciseDetails">Exercsie</th>
+            <th class="exerciseDetails">Date</th>
+            <th class="exerciseDetails">Sets</th>
+            <th class="exerciseDetails">Reps</th>
+            <th class="exerciseDetails">Weights</th>
           </tr>
         </thead>
         <tbody>
@@ -43,9 +47,6 @@
       <h5>No Exercises Yet</h5>
       <% } %>
 
-      <td><a href="/users/<%= user._id %>">Users Page</a></td>
-      
-      <a href="/users/<%= user._id %>/exercises/new">Add New Exercise</a>
     </section>
      
     

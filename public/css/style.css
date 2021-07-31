@@ -1,9 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
+
+html {
+    min-height: 100vh;
+}
+
 body {
     display: grid;
+    font-family: 'Abel', sans-serif;
     /* font-family: 'Asap', sans-serif;
     background-color: rgb(180, 255, 255); */
     text-align: center;
     justify-content: center;
+    background-image: linear-gradient(lightgreen, yellow, blue);
+    padding: 20px;
+    font-size: 25px;
+    margin: 25px;
+    
 }
 td { 
     border-bottom: 1px ;
@@ -15,4 +27,47 @@ ul li {
 img {
     padding: 50px;
     text-align: center;
+    max-width: 100%;
+    height: auto;
+}
+.padding {
+    padding: 20px;
+}
+.spacing {
+    padding: 20px;
+}
+a {
+    text-decoration: none;
+    font-size: 25px;
+    color: royalblue;
+    padding: 20px;
+}
+a:hover {
+    color: slategray;
+}
+#aTags{
+    margin-bottom: 25px;
+}
+button {
+    font-size: 20px;
+    border-radius: 2em;
+    background-color: lightyellow;
+    color: black;
+}
+.userInfo {
+    color: slategrey;
+}
+input[type=submit] {
+    font-size: 20px;
+    margin-top: 20px;
+    border-radius: 2em;
+    background-color: lightyellow;
+}
+input[type=text] {
+    font-size: 20px;
+    text-align: center;
+    margin-top: 15px;
+}
+.exerciseDetails {
+    padding: 25px;
 }
