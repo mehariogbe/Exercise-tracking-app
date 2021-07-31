@@ -81,7 +81,7 @@ function show(req, res){
         Exercise.find({user: user._id}, function(err, exercises){
         res.render('users/show', {
             exercises,
-            title: 'User Detail',
+            title: 'User Profile',
             user
         });
     }) 
