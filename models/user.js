@@ -12,7 +12,7 @@ const userSchema = new Schema({
     name: {type: String},
     email: {type: String},
     googleId: {type: String},
-    birthday: {type: Date},
+    birthday: {type: String, match: /[/][1-9]\d?/},
     notes: [noteSchema],
 },{
     timestamps: true
