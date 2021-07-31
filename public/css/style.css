@@ -70,4 +70,12 @@ input[type=text] {
 }
 .exerciseDetails {
     padding: 25px;
+    color: rgb(238, 96, 96);
+    text-decoration: underline;
+}
+#notes {
+    text-align: center;
+}
+.aTags {
+    margin-bottom: 20px;
 }
