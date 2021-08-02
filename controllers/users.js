@@ -9,8 +9,10 @@ function userIndex(req, res) {
         res.render('users/index', {
             title: 'All Users',
             users,
-            user: req.user
-        });
+            // currentUser: req.user,
+            user: req.user,
+           
+        }); 
     });
 }
 
@@ -35,7 +37,8 @@ function updateIndex(req,res) {
         .then(user => {
           res.render("users/update", {
             user: user,
-            title: 'User update'
+            title: 'User update',
+            // currentUser: req.user
           });
         })
         .catch(error => {
@@ -46,7 +49,7 @@ function updateIndex(req,res) {
 } 
 
 function updateUser(req, res, next)  {
-    // console.log(req.params.id);
+    //  console.log(req.user);
     let userId = req.params.id,
     userParams = {
         name: req.body.name,
@@ -57,9 +60,11 @@ function updateUser(req, res, next)  {
         $set: userParams
     })
     .then(user => {
-        // console.log(user)
-        res.redirect(`/users/`);
-        // res.user = user;
+        //  console.log(user, req.user)
+        res.redirect(`/users` );
+            
+       
+        
         next();
     })
     .catch(error => {
@@ -71,7 +76,11 @@ function updateUser(req, res, next)  {
 function deleteUser(req, res) {
     User.findByIdAndDelete(req.params.id, function (err, user) {
         if (err) return res.redirect('/users');
-        res.redirect('/users');
+        req.logout();
+        res.redirect('/'
+          
+            // currentUser: req.user,
+        );
     });
 
 }
@@ -82,7 +91,8 @@ function show(req, res){
         res.render('users/show', {
             exercises,
             title: 'User Profile',
-            user
+            user,
+            // currentUser: req.user,
         });
     }) 
 });
