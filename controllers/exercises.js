@@ -15,7 +15,8 @@ function newExercise(req, res) {
         userId: req.params.id,
         
         title: 'New Exercise',
-        user: req.user
+        user: req.user,
+        // currentUser: req.user
     });
     // console.log(userId)
 }
@@ -25,7 +26,8 @@ function show(req, res){
         res.render('exercises/index', {
             exercises,
             title: 'Exercise Page',
-            user
+            user,
+            // currentUser: req.user
         });
     }) 
 });
@@ -46,4 +48,8 @@ function create(req, res) {
         res.redirect(`/users/${userId}/exercises/index`);
     });
 }
+
+
+
+
 
